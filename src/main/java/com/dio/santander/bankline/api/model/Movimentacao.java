@@ -11,6 +11,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 @Entity
 @Table(name = "tab_movimentacao")
 public class Movimentacao {
@@ -24,6 +27,10 @@ public class Movimentacao {
 	
 	@Enumerated(EnumType.STRING)
 	private TipoMovimentacao tipo;
+	
+	@Column(name = "id_conta")
+	private Integer idConta;
+		
 	public Integer getId() {
 		return id;
 	}
@@ -54,5 +61,11 @@ public class Movimentacao {
 	public void setTipo(TipoMovimentacao tipo) {
 		this.tipo = tipo;
 	}
-	
+	public Integer getIdConta() {
+		return idConta;
+	}
+	public void setIdConta(Integer idConta) {
+		this.idConta = idConta;
+	}
+
 }
